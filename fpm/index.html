@@ -138,6 +138,29 @@
         <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.  Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas e resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Sinta-se à vontade para falar conosco em horário comercial de Segunda a Sextas das 09h00 às 18h00. Lemos e respondemos todas as mensagens por ordem de chegada.</p>
       </div>
       <p style="text-align: center; color: #B6B6A5; font-weight: bold; font-size: 16px;">Copyright 2022 © | F.K. Corporation ©</p>
+
+      <script>
+      let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com"];
+
+      function getParams() {
+          let t = "",
+              e = window.top.location.href,
+              r = new URL(e);
+          if (null != r) {
+              let a = r.searchParams.get("utm_source"),
+                  n = r.searchParams.get("utm_medium"),
+                  o = r.searchParams.get("utm_campaign"),
+                  m = r.searchParams.get("utm_term"),
+                  c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+          }
+          return t
+      }! function() {
+          var t = new URLSearchParams(window.location.search);
+          t.toString() && document.querySelectorAll("a").forEach(function(e) {
+              for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+          })
+      }();
+      </script>
     </footer>
     <script type="text/javascript">
     //Pessoas assistindo nesse momento
