@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preload" href="https://scripts.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e19fd58426680009571071/player.js" as="script">
+    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+    <link rel="preload" href="https://images.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e19fd58426680009571071/thumbnail.jpg" as="image">
+    <link rel="preload" href="https://cdn.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/63e19ee5fc8a6b00096d0e24/playlist.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+    <!-- Título da Página -->
+    <title>¡Felicidades!</title>
+
+    <script src="https://player.pandavideo.com.br/api.v2.js"></script>
+    <style>
+        .delay{display:none;}
+
+        body {font-size: 16px;
+  background-color: #000;
+  background-position: top;
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  background-blend-mode: darken;
+  min-height: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-player {
+    width: 100%;
+    background: 0 0;
+  }
+  .video-player iframe {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin: auto;
+  }
+  #frame {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-player {
+    margin-top: 0 !important;
+  }
+}
+
+.som{
+  width: 100%;
+}
+
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <!-- HL em IMG -->
+            <img style="width: 100%;" src="hl-2.png">
+        
+            <!-- VSL -->
+            <div id="vid_63e19fd58426680009571071" style=" border-radius: 10px; position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_63e19fd58426680009571071" src="https://images.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e19fd58426680009571071/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_63e19fd58426680009571071" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_63e19fd58426680009571071">var s=document.createElement("script");s.src="https://scripts.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e19fd58426680009571071/player.js",s.async=!0,document.head.appendChild(s);</script>
+
+            <!-- Ligue o Som -->
+            <img class="som" src="som.png">
+
+            <!-- HOTMART - Upsell Widget -->
+            <div id="box_hotmart"></div>
+            <script src="https://pay.hotmart.com/assets/js/hotmart.upsell_checkout.js"></script>
+
+            <script>
+              opts = {
+              key: 'USL-84839-268655-fbd7ac0e4d6ebd176cb76ea378fe61fb',
+              width: '650' ,
+              height: '420'
+              };
+              Upsell.Widget.show(opts);
+            </script>
+            <!-- HOTMART - Upsell Widget [end] -->
+
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+    //---------------------------------------
+
+    //Botão Sincronizado
+        
+    //-------------------------------------
+
+    const DELAY_TIME_IN_SECONDS = 0;
+    const DELAY_ELEMENTS_CLASS = 'delay';
+
+     let player;
+    
+    function showElements(className, value) {
+        for (const element of document.getElementsByClassName(className)) {
+            element.style.display = value;
+        }
+    }
+    
+    function showElementsAfterDelay() {
+      const time = Math.floor(player.video.currentTime);
+      if (time >= DELAY_TIME_IN_SECONDS && player.paused == false) {
+        showElements(DELAY_ELEMENTS_CLASS, 'block');
+      }
+    }
+    
+    window.onload = () => {
+        showElements(DELAY_ELEMENTS_CLASS, 'none');
+        const addFunctionShowElementsAfterDelay = setInterval(() => {
+          if (window.smartplayer.instances[0].mounted) {
+            player = window.smartplayer.instances[0];
+            player.events.events.timeupdate.push(showElementsAfterDelay);
+            clearInterval(addFunctionShowElementsAfterDelay);
+          }
+        }, 100)
+    }
+    </script>
+
+  </body>
+</html>
