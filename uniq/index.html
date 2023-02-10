@@ -446,6 +446,30 @@ h4 {
           <div class="texto-branco-div"><a style="cursor: pointer;" onclick="openTermos()" class="texto-branco"><b>Terminos de Uso</b></a> | <a style="cursor: pointer;" onclick="openPrivac()" class="texto-branco"><b>Política de Privacidad</b></a></div>
           <p style="text-align: center; color: #fff; font-weight: bold; font-size: 14px; margin-top: 5px;">Copyright 2023 ©</p>
         </div>
+      
+        <script>
+      let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com"];
+
+      function getParams() {
+          let t = "",
+              e = window.top.location.href,
+              r = new URL(e);
+          if (null != r) {
+              let a = r.searchParams.get("utm_source"),
+                  n = r.searchParams.get("utm_medium"),
+                  o = r.searchParams.get("utm_campaign"),
+                  m = r.searchParams.get("utm_term"),
+                  c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+          }
+          return t
+      }! function() {
+          var t = new URLSearchParams(window.location.search);
+          t.toString() && document.querySelectorAll("a").forEach(function(e) {
+              for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+          })
+      }();
+      </script>
+      
     </footer>
     
 
