@@ -7,356 +7,93 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="preload" href="https://scripts.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e02ce0036083000a0a7175/player.js" as="script">
-    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-    <link rel="preload" href="https://images.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e02ce0036083000a0a7175/thumbnail.jpg" as="image">
-    <link rel="preload" href="https://cdn.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/63e02ae77b79bf0009f65bc2/playlist.m3u8" as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/com.css">
 
     <!-- Título da Página -->
-    <title>Nuevo método</title>
+    <title>10 Minutos Al Día</title>
 
-    <script src="https://player.pandavideo.com.br/api.v2.js"></script>
-    <style>
-        .delay{display:none;}
+    <style type="text/css">
+      .faixa p {
+        height: 40px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        padding: 3px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        background-color: #AE0000;
+        font-weight: 100;
+      }
 
-        body {
-  font-size: 16px;
-  background-color: #000;
-  background-position: top;
-  background-size: cover;
-  /*background-attachment: fixed;*/
-  background-blend-mode: darken;
-  min-height: 100%;
-}
+      .number {
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+      }
 
-@media (max-width: 768px) {
-  .video-player {
-    width: 100%;
-    background: 0 0;
-  }
-  .video-player iframe {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    margin: auto;
-  }
-  #frame {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    margin: auto;
-  }
-}
+      body {
+        color: white;
+        text-shadow: 1px 1px 4px #000;
+        background-image: url("assets/img/money4.jpg");
+        background-color: rgba(0, 0, 0, 0.7);
+        background-position: top;
+        background-size: cover;
+        /*background-attachment: fixed;*/
+        background-blend-mode: darken;
+      }
 
-@media (max-width: 768px) {
-  .video-player {
-    margin-top: 0 !important;
-  }
-}
+      span {
+        color: #40FD00;
+        /*color: #1D2B59;*/
+        text-shadow: 1px 1px 4px #000; 
+        
+      }
 
-.a-btn {
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  border: 0; 
-  font: inherit; 
-  vertical-align: baseline;
-  color: #2e82bc; 
-  outline: 0; 
-  line-height: 1; 
-  text-align: center; 
-  position:relative!important; display: inline-block!important;
-  border-style: solid; 
-  width: 100%; padding-left: 0!important; padding-right: 0!important; 
-  margin-bottom: 10px; 
-  padding: 22px 44px; border-color: #ff5535; border-width: 0px; 
-  border-radius: 6px; 
-  background: linear-gradient(to bottom, #0DC51D 0%, #005200 100%);
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5); 
-  text-decoration: none!important;
-  cursor: pointer;
+      h3 {
+        font-size: 25px;
+      }
 
-   animation: pulse 1.5s infinite alternate;
-  animation-name: pulse;
-  -webkit-animation-name: pulse;
-  animation-duration: 1.5s;
-  -webkit-animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  text-decoration: none;
-}
+      h4 {
+        color: #ADADAD;
+        font-size: 16px;
+      }
 
-@keyframes pulse{
-  0%,100%{transform:scale(.9);opacity:.9;}
-  50%{transform:scale(1);opacity:1;}
-  }
-  @-webkit-keyframes pulse{
-  0%,100%{-webkit-transform:scale(.95);opacity:.7}
-  50%{-webkit-transform:scale(1);opacity:1}
-}
+      .footer p{
+        font-weight: 100;
+        font-size: 7px;
+        margin: 20px auto;
+        padding: 2px 28px;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #787878;
+        max-width: 500px;
+        padding-top: 200px;
+      }
 
-.a-btn:hover {
-    background: #05FF05;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #05ff05, 0 0 25px #05ff05, 0 0 50px #05ff05, 0 0 100px #05ff05;
-}
+      .texto-branco{
+        color: #B6B6A5;
+      }
 
-.span-btn {
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased; 
-  text-align: center;
-  margin: 0; 
-  border: 0; 
-  font: inherit;
-  vertical-align: baseline;
-  display: block; 
-  position: relative; 
-  z-index: 1; 
-  padding: 0 15px; 
-  white-space: normal; 
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: bold; 
-  text-shadow: #000000 0px 1px 0px;
-  text-decoration: none;
-}
-.span-btn2 {
-  -webkit-font-smoothing: antialiased; 
-  text-align: center;
-  padding: 0; border: 0;
-  font: inherit; 
-  vertical-align: baseline; 
-  display: block; 
-  position: relative;
-  z-index: 1; 
-  margin: .2em 0 -.5em; 
-  font-size: 15px; 
-  color: #f5e051; 
-  font-family: Cabin; 
-  font-weight: bold; 
-  font-style: italic;
-  text-shadow: #000000 0px 1px 0px;
-}
+      .texto-branco-div {
+        text-align: center;
+      }
 
-/* Formulário */
-.login-box {
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  width: 540px;
-  padding: 40px;
-  transform: translate(-50%, 0%);
-  /*background: rgba(0,0,0,.5);*/
-  background-image: linear-gradient(to bottom right, #565656, black);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-  border: 1PX solid #fff;
-  z-index: 10000000000;
-}
-
-.login-box h2 {
-  margin: 0 0 10px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-}
-
-.login-box h3{
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.login-box .user-box {
-  position: relative;
-}
-
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0px 10px 5px;
-  font-size: 16px;
-  color: #323232;
-  margin-bottom: 25px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  border-radius: 3px;
-  outline: none;
-}
-.login-box .user-box label {
-  position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 5px;
-  font-size: 16px;
-  color: #a6a6a6;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -25px;
-  left: 0;
-  color: #fff;
-  font-size: 12px;
-}
-
-.login-box form button{
-  position: relative;
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  letter-spacing: 4px;
-  background-color: #0DC51D;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.login-box .btn-ok:hover{
-  background: #05FF05;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #05FF05,
-              0 0 25px #05FF05,
-              0 0 50px #05FF05,
-              0 0 100px #05FF05;
-}
-
-.login-box img{
-  width: 70px;
-  margin: 20px auto 0px auto;
-  display: block;
-}
-
-@media screen and (max-width: 800px){
-
-  .login-box{
-    width: 90%;
-    font-size: 15px;
-    /*top: 740px;*/
-  }
-
-  .login-box .user-box input{
-    font-size: 18px;
-  }
-
-  .login-box .user-box label{
-    font-size: 15px;
-  }
-
-  .login-box form a{
-    /*font-size: 40px;*/
-  }
-}
-
-h3 {
-  font-size: 25px;
-}
-
-h4 {
-  color: #ADADAD;
-  font-size: 16px;
-}
-
-.disc p{
-  font-weight: 100;
-  font-size: 12px;
-  margin: 20px auto;
-  padding: 2px 28px;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #787878;
-  max-width: 800px;
-  padding-top: 20px;
-  line-height: 13px;
-}
-
-.disc{
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.texto-branco{
-  color: #fff;
-}
-
-.texto-branco-div {
-  text-align: center;
-  color: #fff;
-}
-
-.som{
-  width: 100%;
-}
-
-.last-pg{
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 5px;
-  padding-top: 10px;
-}
-
-.modal{
-  background-color: white;
-  border-radius: 20px;
-  margin: 50px auto;
-  overflow:auto; 
-  max-width: 500px;
-  z-index: 10000000;
-  padding: 10px;
-  color: #646464;
-}
-
-.close-modal{
-    cursor: pointer;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-}
-
-.modal::-webkit-scrollbar {
-    width: 6px;
-}
-
-.modal-footer button{
-  margin: 0 auto;
-  border: none;
-  padding: 10px 40px;
-}
-
-.dim {
-  /* For Internet Explorer */
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, .6);
-    
-  /* For other browsers */
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .6);
-}
-
+      .som{
+        width: 100%;
+      }
     </style>
-    
-    <script id="hotmart_launcher_script">
-			(function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
-			(l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
-			e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
-			})(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
 
-			hot('account','db9f355e-94d9-3c64-bab0-9b3c048cb2e5');
+     <script id="hotmart_launcher_script">
+      (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
+      (l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
+      e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
+      })(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
+
+      hot('account','db9f355e-94d9-3c64-bab0-9b3c048cb2e5');
     </script>
     
     <script>
@@ -389,77 +126,55 @@ h4 {
     </script>
     <noscript><img height="1" width="1" style="display:none"
           src="https://www.facebook.com/tr?id=1159568518261237&ev=PageView&noscript=1"
-        /></noscript>
-	  
+        /></noscript>  
+
+  </head>
+  <body>  
 
     
-</head>
-  <body>
+    
+      <div class="faixa">
+        <p><span class="number" id="iD1">602</span> Personas viendo ahora...</p>
+      </div>
     <header>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
-            <!-- HL em IMG 
-            <img style="width: 100%;" src="hl-2.png">
+          
+            <!-- Headline 
+            <h3 class="my-4"><b>Esta plataforma secreta fue revelada en la mayor feria tecnológica realizada en Estados Unidos. A través de ella una de las empresas más grandes del mundo comparte tus ganancias y <span>PAGA 200 DÓLARES TODOS LOS DÍAS EN TAN SOLO 10 MINUTOS</span><br></h3>
             -->
+
+            <!-- HL em IMG 
+            <img style="width: 100%" src="assets/img/hl-2.png">-->
         
             <!-- VSL -->
             <div id="vid_63e02ce0036083000a0a7175" style=" border-radius: 10px; position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_63e02ce0036083000a0a7175" src="https://images.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e02ce0036083000a0a7175/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_63e02ce0036083000a0a7175" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_63e02ce0036083000a0a7175">var s=document.createElement("script");s.src="https://scripts.converteai.net/9c488a32-7728-4744-85aa-9cc11f30b568/players/63e02ce0036083000a0a7175/player.js",s.async=!0,document.head.appendChild(s);</script>
-
-            <!-- Ligue o Som -->
-            <img class="som" src="som.png">
+            
+            <img class="som" src="assets/img/som.png">
 
             <!-- Botão -->
-            <div id="cta1" class="delay mt-4">
+            <div id="cta1" class="mt-4 d-none">
               <a href="https://pay.hotmart.com/U71148028V?checkoutMode=10" class="a-btn" style="text-decoration: none;">
-              <!--<a onclick="openForm()" class="a-btn" style="text-decoration: none;">-->
-                <span class="span-btn">¡QUIERO ACCEDER YA!</span>
-                <span class="span-btn2">(Atención: Plazas limitadas.)</span>
+                <span class="span-btn">DECIDÍ VIVIR UNA VIDA ILIMITADA</span>
+                <span class="span-btn2">(Atención: Plazas limitadas)</span>
               </a>
-              <img style="width: 100%" src="payment.png">
             </div>
+
           </div>
         </div>
       </div>
     </header>
+    
+    <footer>
+      <div class="footer">
+        <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.  Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas e resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Sinta-se à vontade para falar conosco em horário comercial de Segunda a Sextas das 09h00 às 18h00. Lemos e respondemos todas as mensagens por ordem de chegada.</p>
+      </div>
+            <!-- Termos de Uso e Política de Privacidade -->
+            <div class="texto-branco-div mt-4"><a href="termos.html" class="texto-branco">Terminos de Uso</a> | <a href="privacidade.html" class="texto-branco">Políticas de Privacidad</a></div>
+      <p style="text-align: center; color: #B6B6A5; font-weight: bold; font-size: 14px; margin-top: 5px;">Copyright 2022 © | F.K. Corporation ©</p>
 
-    <!-- Popup 2 -->
-    <div id="form" class="login-box" style="display: none;">
-        <h2>Completar correctamente</h2>
-        <h3>Creamos tu acceso al curso</h3>
-        <p style="color: gray;text-align: center;">====================</p>
-        <form action="https://pay.hotmart.com/U71148028V">
-            <input style="display: none;" type="text" name="checkoutMode" value="10">
-            <div class="user-box">
-              <input type="text" name="name" required>
-              <label>Su nombre:</label>
-            </div>
-            <div class="user-box">
-              <input type="text" name="email" required>
-              <label>Su e-mail:</label>
-            </div>
-            <!--
-            <div class="user-box">
-              <input id="phone-input" type="text" name="phone" required>
-              <label>Whatsapp:</label>
-            </div>
-            -->
-              <button class="btn-ok" type="submit">Avance</button>
-            <img src="ssl.png">
-        </form>
-    </div>
-
-    <footer style="margin-top: 300px">
-        <div class="disc">
-            <p><b>Este sitio web no está afiliado a Facebook ni a ninguna entidad de Facebook. Una vez que sales de Facebook, no es su responsabilidad, es de nuestro sitio web. Hacemos todo lo posible para indicar y mostrar claramente todas las pruebas de productos y utilizar resultados reales.</b></p>
-          </div>
-        <div class="last-pg">
-          <!-- Termos de Uso e Política de Privacidade -->
-          <div class="texto-branco-div"><a style="cursor: pointer;" onclick="openTermos()" class="texto-branco"><b>Terminos de Uso</b></a> | <a style="cursor: pointer;" onclick="openPrivac()" class="texto-branco"><b>Política de Privacidad</b></a></div>
-          <p style="text-align: center; color: #fff; font-weight: bold; font-size: 14px; margin-top: 5px;">Copyright 2023 ©</p>
-        </div>
-      
-        <script>
+      <script>
       let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com"];
 
       function getParams() {
@@ -481,207 +196,24 @@ h4 {
           })
       }();
       </script>
-      
     </footer>
-    
-
-    <!-- Popups Temos e Políticas de privacidade -->
-    <div id="termos" class="modal">
-        <div class="modal-header">
-            <h2 style="color: red">Terminos de uso</h2>
-            <button onclick="closeTermos()" type="button" class="close-modal">X</button>
-        </div>
-        <div class="modal-body">
-            <p>El equipo del sitio Nuestro producto ha creado estos Términos de uso para demostrar nuestro firme compromiso con la forma en que puede usar toda la información de este sitio.</p>
-             <h1>Términos de uso</h1>
-             <p>Este sitio es un servicio interactivo ofrecido a través de una página electrónica en Internet que ofrece información sobre salud y nutrición a partir de la integración de varias fuentes de información fidedigna y acorde con la opinión personal del autor.</p>
-             <p>El acceso a este sitio representa la aceptación expresa y sin restricciones de los términos de uso que se describen a continuación. Si no está de acuerdo con los términos, no acceda ni utilice este sitio web.</p>
-             <p>El visitante puede utilizar este sitio únicamente para fines lícitos. Este espacio no podrá ser utilizado para publicar, enviar, distribuir o difundir contenidos o información de carácter difamatorio, obsceno o ilícito, incluyendo información de propiedad exclusiva de otras personas o empresas, así como marcas registradas o información protegida por derechos de autor, sin la autorización expresa del titular de estos derechos. Además, no puede usar este sitio para obtener o divulgar información personal, incluidas las direcciones de Internet, sobre los usuarios del sitio.</p>
-             <p>El equipo de este sitio se esfuerza por mantener la calidad, actualidad y autenticidad de la información del sitio, pero sus creadores y colaboradores no son responsables de las fallas en los servicios o la inexactitud de la información ofrecida.</p>
-             <p>No debe suponer que dichos servicios e información están libres de errores o que serán adecuados para sus propósitos particulares. Los creadores y colaboradores tampoco se comprometen a actualizar la información, y se reservan el derecho de cambiar las condiciones de uso o los precios de los servicios y productos ofrecidos en el sitio en cualquier momento.</p>
-             <p>El acceso a este sitio es gratuito. Este sitio puede crear áreas de acceso exclusivo para sus clientes o para terceros especialmente autorizados.</p>
-             <p>Los creadores y colaboradores de este sitio web podrán, a su sola discreción y en cualquier momento, modificar o desactivar el sitio web, así como limitar, cancelar o suspender su uso o acceso. Estos Términos de uso también pueden modificarse en cualquier momento. Visite esta página regularmente y consulte los Términos vigentes en ese momento. Algunas disposiciones de estos Términos pueden ser reemplazadas por términos legales expresos o avisos ubicados en ciertas páginas de este sitio web.</p>
-             <h1>Información enviada por usuarios y colaboradores</h1>
-             <p>Cualquier material, información, artículos u otras comunicaciones que sean transmitidas, enviadas o publicadas en este sitio serán consideradas información no confidencial, y cualquier violación de los derechos de sus creadores no será responsabilidad del equipo de este sitio. . Queda terminantemente prohibido transmitir, intercambiar o publicar, a través de este sitio web, cualquier material de carácter obsceno, difamatorio o ilegal, así como textos o creaciones de terceros sin la autorización del autor. El equipo de este sitio se reserva el derecho de restringir el acceso a la información enviada por terceros a sus usuarios.</p>
-             <p>Este sitio puede, pero no está obligado, a monitorear, revisar y restringir el acceso a cualquier área del sitio donde los usuarios transmitan e intercambien información entre sí, incluidos, entre otros, salas de chat, centros de mensajes u otros. foros de discusión, pudiendo retirar del aire o retirar el acceso a cualquiera de estas informaciones o comunicaciones. Sin embargo, el equipo de este sitio no es responsable del contenido de ninguna información intercambiada entre usuarios, ya sea legal o ilegal.</p>
-             <h1>Limitación de responsabilidad</h1>
-             <p>Los materiales se proporcionan en este sitio web sin ninguna garantía expresa o implícita de comerciabilidad o idoneidad para ningún propósito en particular. En ningún caso, este sitio o sus colaboradores serán responsables de ningún daño, incluida la pérdida de ganancias, la interrupción del negocio o la pérdida de información que resulte del uso o la incapacidad de usar los materiales. El personal de este sitio no garantiza la exactitud o integridad de la información, texto, gráficos, enlaces y otros elementos en los materiales.</p>
-             <p>El equipo de este sitio no es responsable de la infracción de derechos de autor derivada de la información, documentos y materiales publicados en este sitio web, comprometiéndose a retirarlos del aire tan pronto como se le notifique la infracción.</p>
-            <h1>Errores y caídas</h1>
-             <p>Los documentos, información, imágenes y gráficos publicados en este sitio web pueden contener imprecisiones técnicas o errores tipográficos. En ningún caso el equipo de este sitio web y/o sus respectivos proveedores serán responsables de ningún daño directo o indirecto derivado de la imposibilidad de uso, pérdida de datos o beneficios, derivados del acceso y funcionamiento del sitio web, los servicios ofrecidos o información disponible en este sitio web. El acceso a los servicios, materiales, información e instalaciones contenidos en este sitio web no garantiza la calidad de los mismos.</p>
-             <h1>Enlaces a sitios de terceros</h1>
-             <p>Los sitios indicados no están bajo el control de este sitio, que no es responsable del contenido de ningún otro sitio web indicado o al que se acceda a través de este sitio y se reserva el derecho de eliminar cualquier enlace o dirección a otros sitios o servicios en cualquier momento. Este sitio no respalda a las empresas o productos indicados, accedidos o divulgados a través de este sitio web, ni por los anuncios publicados aquí, reservándose el derecho de publicar esta alerta en sus páginas electrónicas cuando lo considere necesario.</p>
-             <h1>Derechos de autor y propiedad intelectual</h1>
-             <p>Los documentos, contenidos y creaciones contenidas en este sitio web pertenecen a sus creadores y colaboradores. La autoría del contenido, material e imágenes exhibidas en diabetescontrolada.com.br está protegida por leyes nacionales e internacionales. No pueden copiarse, reproducirse, modificarse, publicarse, actualizarse, publicarse, transmitirse o distribuirse de ninguna manera sin el permiso previo por escrito de los propietarios de este sitio.</p>
-             <p>​Las imágenes contenidas en este sitio web se incorporan aquí solo con fines de visualización y, a menos que se autorice expresamente por escrito, no se pueden grabar ni descargar mediante descarga. La reproducción o el almacenamiento de materiales recuperados de este servicio someterá a los infractores a las sanciones legales.</p>
-             <p>El nombre de este sitio, su logotipo, el nombre de dominio para el acceso a Internet, así como todos los elementos característicos de la tecnología aquí desarrollada y presentada, en forma de articulación de bases de datos, constituyen marcas registradas y propiedad intelectual privada y todos los derechos derivados de su registro están garantizados por la ley. Algunos derechos de uso pueden ser cedidos por los propietarios del sitio, en un contrato o licencia especial, que puede cancelarse en cualquier momento si no se cumplen sus términos.</p>
-             <p>Las marcas registradas de este sitio solo pueden usarse públicamente con permiso expreso. El uso de estas marcas comerciales en publicidad y promoción de productos debe ser debidamente informado.</p>
-             <h1>Reclamaciones sobre infracción de derechos de autor</h1>
-             <p>El personal de este sitio respeta la propiedad intelectual de otras personas o empresas, y pedimos a nuestros miembros que hagan lo mismo. Todas y cada una de las infracciones de derechos de autor deben notificarse y acompañarse de documentos e información que confirmen la autoría.</p>
-        </div>     
-        <div class="modal-footer">
-            <button style="cursor: pointer;" onclick="closeTermos();">Fechar</button>
-        </div>   
-    </div>
-
-    <div id="privacidade" class="modal">
-        <div class="modal-header">
-            <h2 style="color: red">Política de privacidad</h2>
-            <button onclick="closePrivac();" type="button" class="close-modal">X</button>
-        </div>
-        <div class="modal-body">
-            <h1>Tu perfil personal</h1>
-             <p>Cuando solicitamos información sobre usted, nuestro principal interés es brindarle servicios más personalizados. Respetamos su privacidad y no vendemos, alquilamos ni compartimos su nombre e información personal con otras organizaciones.</p>
-             <p>​Al proporcionar su información personal y su foto, usted comprende y acepta el uso de su imagen, foto, video y comentarios por parte del equipo en este sitio. Esta información está disponible en tu perfil público y en nuestra comunidad, donde también verás la de otros miembros. Tiene la opción de negar el uso de su información actualizando sus opciones en "Privacidad" - "Configuración de la cuenta". De vez en cuando, podemos usar cierta información del cliente en nuestros materiales de marketing. Sin embargo, nunca haremos esto sin antes comunicarnos con usted y recibir su consentimiento por escrito.</p>
-             <h1>Medidas de seguridad</h1>
-             <p>La seguridad de sus datos personales es importante para nosotros. Seguimos los estándares aceptados de la industria para proteger la información personal que se nos envía durante la transmisión de datos y después de que la recibimos. Cuando ingresa información confidencial (como los detalles de su tarjeta de crédito) en nuestros formularios, se cifra para su transmisión mediante la tecnología SSL (Secure Sockets Layer).</p>
-             <p>Si descubre un cargo fraudulento en su estado de cuenta realizado en nombre del personal de este sitio, comuníquese con nosotros e informe el asunto de inmediato al emisor de su tarjeta de acuerdo con sus procedimientos estándar. El sitio hace uso de foros, tablones de anuncios y salas de chat. Recuerde que cualquier información que divulgue a través de estos medios se vuelve pública. Siempre tenga cuidado con la información personal que proporcione a cualquier persona en estos contextos.</p>
-             <p>También insistimos en la verificación de la contraseña al iniciar sesión, para que usted y sus datos estén protegidos contra el acceso no autorizado. Si deja de usar la computadora durante mucho tiempo sin cerrar sesión en la escuela, se cerrará automáticamente después de cierto tiempo.</p>
-             <p>Solo los empleados que necesitan la información para realizar ciertas tareas (como la facturación o el servicio al estudiante, por ejemplo) tienen acceso a la información personal. Los servidores en los que almacenamos su información se mantienen en un entorno seguro.</p>
-             <p>A pesar de las prácticas y procedimientos de seguridad, como ocurre con todas y cada una de las redes informáticas en Internet, el equipo de este sitio no puede garantizar la seguridad de sus datos personales ni de ningún otro dato que se transmita a través de Internet y, por lo tanto, no se hace responsable de infracciones de seguridad.</p>
-             <p>Ningún método de transmisión de datos o almacenamiento electrónico en Internet es 100 % seguro. Por lo tanto, no podemos garantizar la completa seguridad de sus datos.</p>
-            <h1>Anuncios del sitio</h1>
-             <p>​Para enviarte las lecciones diarias (correo electrónico), necesitamos tu dirección de correo electrónico. Como suscriptor de ellos, será agregado a nuestra lista para enviar correos electrónicos ocasionales con actualizaciones de servicios, ofertas especiales y promociones de este sitio.</p>
-             <p>​Puede darse de baja de la recepción de correos electrónicos en cualquier momento. Simplemente haga clic en el enlace "Eliminar correo electrónico de la lista" que aparece en la parte inferior del correo electrónico que le enviamos. En raras ocasiones, enviaremos anuncios relacionados con el servicio, solo cuando sea necesario.</p>
-             <p>Por ejemplo, si nuestro servicio se suspende temporalmente por mantenimiento, podemos enviarle un correo electrónico para informarle. En general, no es posible optar por no recibir este último tipo de comunicación ya que no son correos electrónicos promocionales. Si no desea recibir los correos electrónicos de advertencia, puede solicitar cancelar la suscripción.</p>
-             <p>Protección de la información de los menores Nos comprometemos a proteger la privacidad de los menores. Este y todos nuestros sitios web están destinados a un público general y no pretenden atraer a niños menores de 13 años.</p>
-             <p>No recopilamos ni solicitamos información personal de niños menores de 13 años, ni enviamos correos electrónicos solicitando datos personales, a menos que tengamos el permiso de los padres o tutores legales del niño. La inscripción y suscripción a este sitio ofrece cursos y productos dirigidos al área de la salud y el bienestar.</p>
-             <p>Para tomar uno de estos cursos, aprovechar el período gratuito o convertirse en usuario de nuestra comunidad, debe convertirse en miembro de este sitio. Durante el registro, recopilamos información como su nombre y dirección de correo electrónico.</p>
-             <p>También solicitamos datos demográficos, como edad y sexo, para crear su perfil. También se le puede pedir que proporcione su tarjeta de crédito si el servicio que solicitó está pagado. Esta información está encriptada en nuestro servidor seguro.</p>
-             <p>Como miembro, será agregado a nuestra base para recibir correos electrónicos ocasionales con información de servicio, ofertas especiales y promociones de Nuestro Producto.</p>
-             <h1>Balizas web</h1>
-             <p>​Utilizamos una tecnología llamada gifs transparentes (también conocidos como web beacons o web bugs), que ayudan a administrar mejor el contenido del sitio al permitirle saber cuál funciona mejor. Los gifs transparentes son pequeños gráficos con un identificador único y tienen una función similar a las cookies: se utilizan para rastrear los movimientos en línea de los usuarios de Internet. Sin embargo, a diferencia de las cookies, que permanecen en el ordenador del usuario, los gifs transparentes se incorporan a la propia página y tienen el tamaño de un punto. No utilizamos gifs transparentes que contengan información personal de nuestros clientes. Usamos gifs transparentes en nuestros correos electrónicos con formato HTML para saber cuáles abren los destinatarios. De esta forma, podemos medir la efectividad de ciertas comunicaciones y nuestras campañas. En algunos correos electrónicos, ponemos contenido con enlaces para hacer clic y ser redirigido al sitio web Chave do Coração do Homem. Cuando los usuarios y/o clientes hacen clic en uno de estos enlaces, pasan por un servidor separado antes de llegar a la página de destino. Realizamos un seguimiento de los datos de clics para determinar el interés en cada tema y medir la eficacia de las comunicaciones de nuestros estudiantes. Si prefiere no ser rastreado de esta manera, no haga clic en enlaces de texto o imágenes en sus correos electrónicos.</p>
-             <h1>Con quién compartimos su información</h1>
-             <p>Compartimos tus datos personales con Nosso Product para que las demás empresas del grupo puedan ofrecerte productos y servicios. Cómo La única información que compartimos es su nombre, grupo de edad, correo electrónico y país. Si no desea que se compartan, póngase en contacto con nuestro servicio de atención al cliente por correo electrónico</p>
-             <p>Podemos proporcionar sus datos a empresas que brindan servicios y que nos ayudan con nuestras actividades, como procesar pagos u ofrecer asistencia. Estas empresas están autorizadas a utilizar sus datos solo si es necesario para prestarnos servicios. También podemos pasar sus datos:</p>
-             <p>- Según lo requiera la ley para responder a citaciones o procesos legales similares;</p>
-             <p>- Cuando creamos de buena fe que una violación de la confidencialidad es necesaria para proteger nuestros derechos, proteger su seguridad o la seguridad de los demás, investigar un fraude o responder a una solicitud del gobierno;</p>
-             <p>​- En el caso de que Nuestro Producto se involucre en una fusión, adquisición o se venda en términos o en su totalidad, se le notificará por correo electrónico, o mediante un aviso claro en nuestro sitio web, de dicho cambio, o en el uso de su información personal, así como cualquier nueva situación que implique la divulgación de sus datos personales a terceros, de modo que nunca se haga sin consentimiento.</p>
-             <h1>Galletas</h1>
-            <p>Las "cookies" son pequeños fragmentos de información que registramos en el navegador que utiliza para navegar o en su disco duro. Nosotros y nuestros socios utilizamos cookies para recordar información personal cuando visita nuestro sitio web. Por ejemplo, si elige ver nuestro sitio web en francés, almacenaremos esta información en cookies para que siempre le mostremos el sitio web en francés. También utilizamos cookies para registrar su inicio de sesión con el fin de facilitar su acceso al sitio web. La mayoría de los navegadores le permiten optar por no permitir que las cookies se almacenen en su computadora. Utilizamos cookies de sesión y persistentes. La cookie de sesión caduca tan pronto como cierra su navegador. Las cookies persistentes permanecen en su computadora por un período de tiempo más largo. Además, utilizamos un proveedor de servicios para rastrear el comportamiento de los visitantes en nuestro sitio web. Sin embargo, no tenemos acceso a sus cookies, ni las controlamos. La información recopilada por la empresa proveedora del servicio es anónima y se utiliza para mejorar nuestros servicios y campañas de marketing. Como ocurre con la mayoría de los sitios web, recopilamos información automáticamente y la guardamos en archivos. Esta información incluye dirección IP, tipo de navegador e idioma, proveedor de servicios, páginas de referencia, sistema operativo, fecha/hora e información sobre clics en el sitio web. Usamos esta información para comprender y analizar tendencias, administrar el sitio, conocer el comportamiento de los usuarios y recopilar información demográfica sobre nuestra base de usuarios en general.</p>
-             <h1>Cuestionarios y Concursos</h1>
-             <p>​Podemos brindarles a los clientes y visitantes la oportunidad de participar en cuestionarios o concursos en nuestro sitio. Si participas, te pediremos información y datos personales. La participación en cuestionarios y concursos es completamente voluntaria y, por lo tanto, tiene la opción de no proporcionar su información. La información solicitada a menudo incluye información de contacto (como nombre y correo electrónico) y datos demográficos (como código postal). Usamos esta información para personalizar las comunicaciones que le enviamos y sugerir productos y servicios más relevantes.</p>
-             <h1>Foros públicos</h1>
-             <p>Nuestros sitios ofrecen blogs, foros y comunidades accesibles al público en general. Tenga en cuenta que cualquier dato proporcionado por usted en estas áreas del sitio web puede ser leído, recopilado y utilizado por otras personas que accedan a estas áreas. Solicitar que se elimine la información personal de un blog, foro o comunidad. En algunos casos, puede que no sea posible eliminar la información. Si es así, te lo haremos saber y te explicaremos por qué.</p>
-             <h1>Enlaces a otros sitios web</h1>
-             <p>Este sitio contiene enlaces a otros sitios. Tenga en cuenta que Nuestro Producto no es responsable de los sistemas de privacidad de otros sitios web. Alentamos a nuestros usuarios a que sean cautelosos al salir de nuestro sitio y les recomendamos que lean los términos de uso de cualquier sitio web que recopile información de identificación personal. Estas políticas de privacidad se aplican solo a la información recibida a través del sitio web Nuestro producto.</p>
-
-        </div>     
-        <div class="modal-footer">
-            <button style="cursor: pointer;" onclick="closePrivac()">Fechar</button>
-        </div>   
-    </div>
-
     <script type="text/javascript">
-    //temporização da Call to Action (em milissegundos)
-    //setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1000); 
-
-    //Abrindo popups
-        //Privacidade
-        function openPrivac() {
-            fundoEscuroPriv();
-            document.getElementById("privacidade").style.display = "block";
-        }
-        //Close privacidade
-        function closePrivac() {
-            fundoClaroPriv();
-            document.getElementById("privacidade").style.display = "none";
-        }
-        //Abrindo Termos
-        function openTermos() {
-            fundoEscuroTerm();
-            document.getElementById("termos").style.display = "block";
-        }
-        //Close Termos
-        function closeTermos() {
-            fundoClaroTerm();
-            document.getElementById("termos").style.display = "none";
-        }
-    //-------------------------------------------
-
-    // Deixando o fundo escuro ao abrir os popups.
-        var valuePriv = document.getElementById('privacidade');
-        function fundoEscuroPriv () {
-            valuePriv.classList.add('dim');
-        };
-
-        function fundoClaroPriv (){
-          valuePriv.classList.remove('dim');
-        };
-
-        var valueTerm = document.getElementById('termos');
-        function fundoEscuroTerm () {
-          valueTerm.classList.add('dim');
-        };
-
-        function fundoClaroTerm (){
-          valueTerm.classList.remove('dim');
-        };
-
-        var valueForm = document.getElementById('form');
-        function fundoEscuro () {
-          valueForm.classList.add('dim');
-        };
-
-        function fundoClaro (){
-          valueForm.classList.remove('dim');
-        };
-    //--------------------------------------
-
-    //Abrindo Form
-        // Abrindo o PopUp
-        function openForm() {
-          fundoEscuro ();
-          document.getElementById("form").style.display = "block";
-        }
-    //---------------------------------------
-
-    //Botão Sincronizado
-        
-    //-------------------------------------
-
-    const DELAY_TIME_IN_SECONDS = 1165;
-    const DELAY_ELEMENTS_CLASS = 'delay';
-
-     let player;
-    
-    function showElements(className, value) {
-        for (const element of document.getElementsByClassName(className)) {
-            element.style.display = value;
-        }
+    //Pessoas assistindo nesse momento
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
-    function showElementsAfterDelay() {
-      const time = Math.floor(player.video.currentTime);
-      if (time >= DELAY_TIME_IN_SECONDS && player.paused == false) {
-        showElements(DELAY_ELEMENTS_CLASS, 'block');
-      }
-    }
-    
-    window.onload = () => {
-        showElements(DELAY_ELEMENTS_CLASS, 'none');
-        const addFunctionShowElementsAfterDelay = setInterval(() => {
-          if (window.smartplayer.instances[0].mounted) {
-            player = window.smartplayer.instances[0];
-            player.events.events.timeupdate.push(showElementsAfterDelay);
-            clearInterval(addFunctionShowElementsAfterDelay);
-          }
-        }, 100)
-    }
-
-    // Formatando o Telefone
-    //const input = document.getElementById("phone-input");
-
-    //input.oninput = function() {
-    //  let value = input.value.replace(/\D/g, ""); // remove tudo o que não é número
-    //  if (value.length > 11) {
-    //    value = value.slice(0, 11);
-    //  }
-    //  input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
-    //};
+    function MudarPessoas(){
+      const result = getRandomInt(612, 649);
+        //console.log(result); 
+        const Element = document.getElementById("iD1").innerHTML = result;
+    };
+    setInterval(MudarPessoas, 6000);
 
 
+    setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1167000); 
     </script>
 
+
+    
   </body>
 </html>
